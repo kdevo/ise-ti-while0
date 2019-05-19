@@ -3,17 +3,7 @@ grammar While0;
 @header {
 package me.kdevo.ise.ti.while0;
 }
-
-/* Trafo antlr -> JavaCC
-   1. Take UPPERCASE-RULES (keyword-rules) first
-   2. TOKEN: {
-        < UPPERCASE-RULE: Regex-Spec with " " around chars >
-      }
-   3. Start from 1 and use the lowercase-rules
-
-   Note: The SKIP lexical spec. type in JavaCC is equivalent to rules ending with a '->'
-*/
-
+ 
 program: header? body*;
 
 // -------------
