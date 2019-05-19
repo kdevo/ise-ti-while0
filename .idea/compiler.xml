@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="ise-ti-while.main" target="1.8" />
+      <module name="ise-ti-while.test" target="1.8" />
+      <module name="ti-practicum.main" target="1.8" />
+      <module name="ti-practicum.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
