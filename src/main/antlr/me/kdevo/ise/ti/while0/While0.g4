@@ -4,7 +4,7 @@ grammar While0;
 package me.kdevo.ise.ti.while0;
 }
  
-program: header? body*;
+program: header? body?;
 
 // -------------
 // * HEADER *
@@ -23,7 +23,7 @@ var: VAR;
 // * BODY *
 // -------------
 
-body: stmtAssignment (DELIM stmtAssignment)* | stmtWhile;
+body: (stmtAssignment | stmtWhile) (DELIM body)?;
 
 stmtAssignment: (assignment0 | assignment1);
 assignment0: var ASSIGN ZERO;
