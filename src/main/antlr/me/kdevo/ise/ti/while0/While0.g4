@@ -4,7 +4,7 @@ grammar While0;
 package me.kdevo.ise.ti.while0;
 }
  
-program: header? body?;
+program: header body EOF;
 
 // -------------
 // * HEADER *
@@ -13,7 +13,7 @@ program: header? body?;
 header: headerSignature DELIM (headerLocals DELIM)*;
 headerSignature: headerProgramName LBRACKET (headerIn | headerIn? DELIM headerOut) RBRACKET;
 headerIn: KW_IN var (COMMA var)*;
-headerOut: KW_OUT var (COMMA var)*;
+headerOut: KW_OUT var;
 
 headerProgramName: VAR;
 headerLocals: KW_VAR LBRACKET var (COMMA var)* RBRACKET;
@@ -25,10 +25,7 @@ var: VAR;
 
 body: (stmtAssignment | stmtWhile) (DELIM body)?;
 
-stmtAssignment: (assignment0 | assignment1);
-assignment0: var ASSIGN ZERO;
-assignment1: var ASSIGN var PLUS ONE;
-
+stmtAssignment: var ASSIGN (var PLUS ONE | ZERO);
 stmtWhile: KW_WHILE var NOT_EQ var KW_DO KW_BEGIN body KW_END;
 
 // -------------
@@ -59,7 +56,7 @@ KW_BEGIN: 'begin';
 KW_END: 'end';
 
 // Identifier names:
-VAR: [a-zA-Z]+[a-zA-Z0-9]*;
+VAR: [a-zA-Z][a-zA-Z0-9]*;
 
 // Skip over:
 WS: [ \t\r\n]+ -> skip;

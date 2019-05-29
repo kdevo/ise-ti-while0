@@ -18,8 +18,6 @@ class ErrorListener : BaseErrorListener() {
     ) {
         parsingError = true
         super.syntaxError(recognizer, offendingSymbol, line, charPositionInLine, msg, e)
-        throw IOException("Syntax error. Line $line:$charPositionInLine.")
+        throw IOException("Syntax error. Line $line:$charPositionInLine. $msg.")
     }
-
-
 }
