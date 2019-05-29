@@ -1,5 +1,7 @@
 # ANTLR example for While0 language
 
+![Build status on Travis](https://api.travis-ci.com/kdevo/ise-ti-while0.svg?branch=master)
+
 ## Used technologies:
 1. ANTLR: Generate Java code based on [While0 grammar file](src/main/antlr/me/kdevo/ise/ti/while0/While0.g4)
 2. Kotlin: Use generated Java source code (is placed in `build/generated-src`)
