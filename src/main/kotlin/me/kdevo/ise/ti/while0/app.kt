@@ -3,7 +3,7 @@ package me.kdevo.ise.ti.while0
 import org.antlr.v4.runtime.*
 
 fun main() {
-    val compiler = While0Compiler(true)
+    val compiler = While0Compiler(false)
     compiler.compile(CharStreams.fromString(
         """
             PROG(in X1, X2; out Y);
@@ -16,7 +16,7 @@ fun main() {
                 end
             end
         """.trimIndent()))
-    compiler.printResult(true)
+    compiler.printResult(false)
     userInput()
 }
 
