@@ -5,7 +5,7 @@ import org.antlr.v4.runtime.RecognitionException
 import org.antlr.v4.runtime.Recognizer
 import java.io.IOException
 
-class ErrorListener : BaseErrorListener() {
+class While0ErrorLIstener : BaseErrorListener() {
     var parsingError = false
 
     override fun syntaxError(
